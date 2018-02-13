@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}FAQ PAGE{% endblock title %}
+{% block body %}
+<div class="container" style="padding-top: 150px;">
+    <div class="row">
+        <div class="col-md-10">
+        <h2>{{ title }} </h2>
+        {% if current_user.is_authenticated %}
+        Hi {{ current_user.name }}!
+        <a href="{{ url_for('edit_page', page_id=id) }}"><small>Edit</small></a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{{ url_for('delete_page', page_id=id) }}"><small>Delete</small></a>
+        {% endif %}
+        <br/><br/>
+    {{ content|safe }}
+        </div>
+    </div>
+</div>
+{% endblock body %}

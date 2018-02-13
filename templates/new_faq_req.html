@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}ADD FAQ{% endblock title %}
+{% block body %}
+<div class="container" style="padding-top: 150px;">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Add new Faq</h1>
+        </div>
+	<br/>
+	<br/>
+	<form action="{{ url_for('save_req_page') }}" method="POST">
+		<input placeholder="Enter title here.." type="text" name="req_title"/>
+		<br/>
+		<br/>
+
+		<!-- WYSIWYG editor -->
+		<div id="toolbar">
+		  <a class="label label-primary" data-wysihtml5-command="bold">bold</a>
+		  <a class="label label-primary" data-wysihtml5-command="italic">italic</a>
+		  <a class="label label-primary" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">H1</a>
+		  <a class="label label-primary" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p">P</a>
+		</div>
+		<textarea id="editor" rows="20", cols="100" name="req_content" data-placeholder="Enter content here..">
+		</textarea>
+
+		<br/>
+		<input type="submit" class="btn btn-info" value="Submit"/>
+    </form>
+</div>
+</div>
+
+	<script>
+	  var editor = new wysihtml5.Editor('editor', {
+	    toolbar: 'toolbar',
+	    parserRules:  wysihtml5ParserRules
+	  });
+	</script>
+
+{% endblock body %}

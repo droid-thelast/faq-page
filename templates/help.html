@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+  body{
+    overflow-x: none;
+  }
+</style>
+  <div class="container" style="padding-top: 150px;">
+      <div class="row">
+        <div class="col-md-8">
+            {% from "_formhelpers.html" import render_field %}
+            <form action="{{url_for('help')}}" method="POST">
+              <fieldset>
+                <legend>Need Help?</legend>
+                {{ form.hidden_tag() }}
+      
+                <div class="form-group">
+                  {{ render_field(form.name) }}
+                </div>
+                <div class="form-group">
+                  {{ render_field(form.tel) }}
+                </div>
+                <div class="form-group">
+                  {{ render_field(form.email) }}
+                </div>
+                <div class="form-group">
+                  {{ render_field(form.location) }}
+                </div>
+                <div class="form-group">
+                  {{ render_field(form.issue) }}
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.report) }}
+                </div>
+                <div class="form-group">
+                  <input class="btn btn-outline-primary" type="submit" value="submit" name="submit">
+                </div>
+              </fieldset>
+            </form>
+          </div>
+      </div>
+  </div>
+{% endblock body %}

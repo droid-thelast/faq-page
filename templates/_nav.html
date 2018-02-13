@@ -1,0 +1,59 @@
+        <!--Main Navigation-->
+        <header>
+
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar mdb-color lighten-2">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <strong> <img class="img-fluid" src="{{url_for('static', filename='img/b_logo.png')}}" alt="" style="width: 100px;"> </strong>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('faq')}}">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Help</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('new_page')}}">Add Faq(Admin Only)</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Intro Section -->
+            <div class="view hm-indigo-light jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url({{url_for('static', filename='img/bwala-faq.jpeg')}});">
+                <div class="full-bg-img">
+                    <div class="container flex-center">
+                        <div class="row pt-5 mt-3">
+                            <div class="col-md-12">
+                                <div class="text-center">
+                                    <h1 class="h1-reponsive white-text font-up font-bold mb-3 wow fadeInDown" data-wow-delay="0.3s">
+                                        <strong>PARTNER HELP</strong>
+                                    </h1>
+                                    <hr class="hr-light mt-4 wow fadeInDown" data-wow-delay="0.4s">
+                                    <h5 class="font-up mb-5 white-text wow fadeInDown" data-wow-delay="0.4s">
+                                        <strong>Frequently Asked Questions</strong>
+                                    </h5>
+                                    <a href="{{url_for('help')}}" class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">Help Me</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <!--Main Navigation-->

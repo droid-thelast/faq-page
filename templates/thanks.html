@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}THANK YOU{% endblock title %}
+{% block body %}
+<div class="container-full" style="padding-top: 150px;">
+    <div class="row">
+        <div class="col-md-10">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <ul class="flashes list-group">
+              {% for message in messages %}
+                <li class="list-group-item list-group-item-primary">{{ message }}</li>
+              {% endfor %}
+              </ul>
+            {% endif %}
+          {% endwith %}
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    window.onbeforeunload = function() {
+        return "Back to Home";
+    }
+</script>
+{% endblock body %}
+

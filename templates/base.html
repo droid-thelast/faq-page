@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="full-height">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>{% block title %}{% endblock title %}</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="{{url_for('static', filename='css/mdb.min.css')}}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/app.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+    <!-- TinyMCE JavaScript -->
+    <script type="text/javascript" src="{{url_for('static', filename='tinymce/tinymce.min.js')}}"></script>
+    <script>tinymce.init({selector:'textarea', theme: 'modern'})</script>
+ 
+</head>
+
+<body>
+   {% include "_nav.html" %} 
+   {% block body %}
+   {% endblock body %}
+   {% include "_footer.html" %}
+
+
+        <!-- SCRIPTS -->
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.2.1.min.js')}}"></script>
+
+        <!-- Bootstrap dropdown -->
+        <script type="text/javascript" src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="{{url_for('static', filename='js/mdb.min.js')}}"></script>
+
+        <!-- Include external JS libs. 
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+        <script>
+            new WOW().init();
+        </script> -->
+            <!-- Include Editor JS files. 
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.3/js/froala_editor.pkgd.min.js"></script>
+        <script>
+        $(function() {
+            $('#editor').froalaEditor({toolbarInline: false})
+        });
+        </script> -->
+
+        <script>
+                $(document).ready(function() {
+                    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+                        e.preventDefault();
+                        $(this).siblings('a.active').removeClass("active");
+                        $(this).addClass("active");
+                        var index = $(this).index();
+                        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+                        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+                    });
+                });
+        </script> 
+
+</body>
+
+</html>
